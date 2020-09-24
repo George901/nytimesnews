@@ -16,7 +16,7 @@ extension Favorite {
         return NSFetchRequest<Favorite>(entityName: "Favorite")
     }
 
-    @NSManaged public var newsID: Decimal
+    @NSManaged public var newsID: Int64
     @NSManaged public var newsPublishedAt: Date
     @NSManaged public var newsTitle: String
     @NSManaged public var newsAbstract: String
@@ -28,7 +28,7 @@ extension Favorite {
 extension Favorite: News {
 
     var id: Int {
-        return NSDecimalNumber(decimal: newsID).intValue
+        return Int(newsID)
     }
     
     var title: String {
