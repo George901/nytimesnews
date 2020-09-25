@@ -40,6 +40,9 @@
 		404B89D0251CCC79008AF0C6 /* MostEmailedClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B89CF251CCC79008AF0C6 /* MostEmailedClient.swift */; };
 		404B89D3251CD086008AF0C6 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B89D2251CD086008AF0C6 /* DateHelper.swift */; };
 		404B89D6251CD49B008AF0C6 /* ApiParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B89D5251CD49B008AF0C6 /* ApiParams.swift */; };
+		404B89DA251DC22F008AF0C6 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B89D9251DC22F008AF0C6 /* Database.swift */; };
+		404B89DD251DC241008AF0C6 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B89DC251DC241008AF0C6 /* CoreDataStorage.swift */; };
+		404B89E0251DC251008AF0C6 /* DatabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B89DF251DC251008AF0C6 /* DatabaseClient.swift */; };
 		674BEE5C29053099564BADC2 /* libPods-nytimesnews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B053E291C68B53C77C8B5D2 /* libPods-nytimesnews.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +82,9 @@
 		404B89CF251CCC79008AF0C6 /* MostEmailedClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedClient.swift; sourceTree = "<group>"; };
 		404B89D2251CD086008AF0C6 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		404B89D5251CD49B008AF0C6 /* ApiParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParams.swift; sourceTree = "<group>"; };
+		404B89D9251DC22F008AF0C6 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		404B89DC251DC241008AF0C6 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		404B89DF251DC251008AF0C6 /* DatabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseClient.swift; sourceTree = "<group>"; };
 		5B053E291C68B53C77C8B5D2 /* libPods-nytimesnews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nytimesnews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		954D9C9258268B9A2B746085 /* Pods-nytimesnews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nytimesnews.release.xcconfig"; path = "Target Support Files/Pods-nytimesnews/Pods-nytimesnews.release.xcconfig"; sourceTree = "<group>"; };
 		CE872407860B0BB53055AC64 /* Pods-nytimesnews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nytimesnews.debug.xcconfig"; path = "Target Support Files/Pods-nytimesnews/Pods-nytimesnews.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,11 +123,11 @@
 		40177FD6251C910200769BD5 /* nytimesnews */ = {
 			isa = PBXGroup;
 			children = (
+				40177FD7251C910200769BD5 /* AppDelegate.swift */,
+				40178024251CAA5800769BD5 /* AppCoordinator.swift */,
 				404B89A2251CC3C6008AF0C6 /* Models */,
 				404B8990251CBA4C008AF0C6 /* Storage */,
 				404B898F251CBA42008AF0C6 /* Networking */,
-				40177FD7251C910200769BD5 /* AppDelegate.swift */,
-				40178024251CAA5800769BD5 /* AppCoordinator.swift */,
 				40178005251C9A1C00769BD5 /* UI */,
 				40177FFF251C95B300769BD5 /* Helpers */,
 				40177FFB251C95AD00769BD5 /* Protocols */,
@@ -301,6 +307,9 @@
 			isa = PBXGroup;
 			children = (
 				404B899C251CC2C9008AF0C6 /* Storage.swift */,
+				404B89DC251DC241008AF0C6 /* CoreDataStorage.swift */,
+				404B89D9251DC22F008AF0C6 /* Database.swift */,
+				404B89DF251DC251008AF0C6 /* DatabaseClient.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -472,9 +481,11 @@
 				404B8993251CBA79008AF0C6 /* News.xcdatamodeld in Sources */,
 				404B89B0251CC5CE008AF0C6 /* Favorite+CoreDataProperties.swift in Sources */,
 				404B8976251CB259008AF0C6 /* BaseTableViewController.swift in Sources */,
+				404B89E0251DC251008AF0C6 /* DatabaseClient.swift in Sources */,
 				404B898C251CB7C3008AF0C6 /* NewsListController.swift in Sources */,
 				40178012251CA4A000769BD5 /* TabBarPresenter.swift in Sources */,
 				404B89D3251CD086008AF0C6 /* DateHelper.swift in Sources */,
+				404B89DD251DC241008AF0C6 /* CoreDataStorage.swift in Sources */,
 				404B89B9251CC78D008AF0C6 /* JsonParser.swift in Sources */,
 				4017800F251CA40700769BD5 /* TabBarController.swift in Sources */,
 				404B89C6251CCB41008AF0C6 /* NewsApi.swift in Sources */,
@@ -487,6 +498,7 @@
 				40177FD8251C910200769BD5 /* AppDelegate.swift in Sources */,
 				40178025251CAA5800769BD5 /* AppCoordinator.swift in Sources */,
 				404B8996251CBE61008AF0C6 /* News.swift in Sources */,
+				404B89DA251DC22F008AF0C6 /* Database.swift in Sources */,
 				40178015251CA4BA00769BD5 /* MainCoordinator.swift in Sources */,
 				404B89D0251CCC79008AF0C6 /* MostEmailedClient.swift in Sources */,
 				404B899A251CC1E4008AF0C6 /* FavoritesFactory.swift in Sources */,

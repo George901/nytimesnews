@@ -13,4 +13,5 @@ protocol News: NSObjectProtocol {
     var abstract: String { get }
     var publishedAt: String { get }
     var author: String { get }
+    var url: String { get }
 }

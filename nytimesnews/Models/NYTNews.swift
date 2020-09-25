@@ -48,6 +48,11 @@ class NYTNews: NSObject, Mappable {
 
 extension NYTNews: News {
     
+    var url: String {
+        return newsUrl
+    }
+    
+    
     var id: Int {
         return newsID
     }

@@ -26,7 +26,11 @@ extension Favorite {
 }
 
 extension Favorite: News {
-
+    
+    var url: String {
+        return newsUrl
+    }
+    
     var id: Int {
         return Int(newsID)
     }
