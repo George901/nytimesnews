@@ -19,13 +19,13 @@ class NYTNews: NSObject, Mappable {
     
     private let transform = TransformOf<Date, String>(fromJSON: {(str) -> Date? in
         if let string = str {
-            return DateHelper.shared.dateFormatterDay.date(from: string)
+            return DateHelper.shared.dateFormatterServer.date(from: string)
         } else {
             return Date()
         }
     }, toJSON: {(date) -> String? in
         if let date = date {
-            return DateHelper.shared.dateFormatterDay.string(from: date)
+            return DateHelper.shared.dateFormatterServer.string(from: date)
         } else {
             return ""
         }
