@@ -24,8 +24,8 @@ class CoreDataStorage: NSObject, Storage {
         }
     }
     
-    func createFavoriteFrom(news: News) {
-        FavoritesFactory.createFavoriteFrom(news: news, in: context)
+    func createFavoriteFrom(story: Story) {
+        FavoritesFactory.createFavoriteFrom(news: story, in: context)
         saveChanges()
     }
     
@@ -34,11 +34,11 @@ class CoreDataStorage: NSObject, Storage {
         return (try? context.fetch(fetchRequest)) ?? []
     }
     
-    func removeFromFavorites(news: News) {
-        if let favorite = news as? Favorite {
+    func removeFromFavorites(story: Story) {
+        if let favorite = story as? Favorite {
             remove(favorite: favorite)
         } else {
-            remove(news: news)
+            remove(story: story)
         }
     }
     
@@ -64,11 +64,11 @@ class CoreDataStorage: NSObject, Storage {
         saveChanges()
     }
 
-    private func remove(news: News) {
+    private func remove(story: Story) {
         let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "newsID == \(news.id)")
+        fetchRequest.predicate = NSPredicate(format: "newsID == \(story.id)")
         guard let favorite = try? context.fetch(fetchRequest).first else {
-            print("No favorites found matching news: \(news.title)")
+            print("No favorites found matching news: \(story.title)")
             return
         }
         remove(favorite: favorite)

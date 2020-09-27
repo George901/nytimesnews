@@ -17,7 +17,7 @@ class NewsCell: UITableViewCell {
     
     private var onFavoritePress: ((Bool)->())?
 
-    func setupWith(news: News, isFavorite: Bool, onFavoritePress: ((Bool)->())?) {
+    func setupWith(news: Story, isFavorite: Bool, onFavoritePress: ((Bool)->())?) {
         newsTitleLabel.text = news.title
         absctractLabel.text = news.abstract
         authorLabel.text = news.author

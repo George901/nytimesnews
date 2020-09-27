@@ -46,7 +46,7 @@ class NYTNews: NSObject, Mappable {
     
 }
 
-extension NYTNews: News {
+extension NYTNews: Story {
     
     var url: String {
         return newsUrl

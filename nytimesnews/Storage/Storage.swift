@@ -9,8 +9,8 @@ import Foundation
 
 protocol Storage: NSObjectProtocol {
     func configure()
-    func createFavoriteFrom(news: News)
+    func createFavoriteFrom(story: Story)
     func getFavorites() -> [Favorite]
-    func removeFromFavorites(news: News)
+    func removeFromFavorites(story: Story)
     func clear()
 }

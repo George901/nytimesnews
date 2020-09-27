@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoritesController: NewsListController {
+class FavoritesController: StoriesListController {
     
     @IBOutlet private weak var noDataLabel: UILabel!
     
@@ -17,8 +17,8 @@ class FavoritesController: NewsListController {
     }
     
     private func setupView() {
-        noDataLabel.isHidden = !presenter.news.isEmpty
-        tableView.isHidden = presenter.news.isEmpty
+        noDataLabel.isHidden = !presenter.stories.isEmpty
+        tableView.isHidden = presenter.stories.isEmpty
     }
     
 }
@@ -31,7 +31,7 @@ extension FavoritesController {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            presenter.removeFromFavorites(news: presenter.news[indexPath.item])
+            presenter.removeFromFavorites(story: presenter.stories[indexPath.item])
             tableView.deleteRows(at: [indexPath], with: .automatic)
             setupView()
         }

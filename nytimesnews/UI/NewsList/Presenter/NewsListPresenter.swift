@@ -7,31 +7,31 @@
 
 import UIKit
 
-protocol NewsPresenter: NSObjectProtocol {
-    var news: [News] { get set }
-    func getNews()
-    func addToFavorites(news: News)
-    func removeFromFavorites(news: News)
-    func isFavorite(news: News) -> Bool
-    func showDetailed(news: News)
+protocol StoriesPresenter: NSObjectProtocol {
+    var stories: [Story] { get set }
+    func getStories()
+    func addToFavorites(story: Story)
+    func removeFromFavorites(story: Story)
+    func isFavorite(story: Story) -> Bool
+    func showDetailed(story: Story)
 }
 
-class NewsListPresenter: NSObject, NewsPresenter {
+class NewsListPresenter: NSObject, StoriesPresenter {
     
-    var news: [News] = []
+    var stories: [Story] = []
     var coordinator: NewsListCoordinator!
     weak var view: NewsListView!
     
-    private let api: NewsApi
+    private let api: StoriesApi
     private let database: Database
     
-    init(api: NewsApi, database: Database) {
+    init(api: StoriesApi, database: Database) {
         self.api = api
         self.database = database
         super.init()
     }
     
-    func getNews() {
+    func getStories() {
         view.showActivity()
         api.loadNews { [weak self] (news) in
             self?.view.hideActivity()
@@ -43,25 +43,25 @@ class NewsListPresenter: NSObject, NewsPresenter {
 
     }
     
-    func addToFavorites(news: News) {
-        database.addNewsToFavorite(news: news)
+    func addToFavorites(story: Story) {
+        database.addToFavorite(story: story)
     }
     
-    func removeFromFavorites(news: News) {
-        database.removeFromFavorite(news: news)
+    func removeFromFavorites(story: Story) {
+        database.removeFromFavorite(story: story)
     }
     
-    func isFavorite(news: News) -> Bool {
-        return database.isFavorite(news: news)
+    func isFavorite(story: Story) -> Bool {
+        return database.isFavorite(story: story)
     }
     
-    func showDetailed(news: News) {
-        coordinator.showDetailed(news: news)
+    func showDetailed(story: Story) {
+        coordinator.showDetailed(news: story)
     }
     
-    private func handleLoaded(news: [News]?) {
+    private func handleLoaded(news: [Story]?) {
         if let news = news {
-            self.news = news
+            self.stories = news
         }
         view.update()
     }

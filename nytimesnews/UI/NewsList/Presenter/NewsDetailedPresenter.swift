@@ -8,7 +8,7 @@
 import UIKit
 
 protocol NewsDetailPresenter {
-    var detailedNews: News { get set }
+    var detailedNews: Story { get set }
     func addToFavorites()
     func removeFromFavorites()
     func isFavorite() -> Bool
@@ -16,25 +16,25 @@ protocol NewsDetailPresenter {
 
 class NewsDetailedPresenter: NSObject, NewsDetailPresenter {
     
-    var detailedNews: News
+    var detailedNews: Story
     private let database: Database
     
-    init(database: Database, news: News) {
+    init(database: Database, news: Story) {
         self.database = database
         self.detailedNews = news
         super.init()
     }
     
     func addToFavorites() {
-        database.addNewsToFavorite(news: detailedNews)
+        database.addToFavorite(story: detailedNews)
     }
     
     func removeFromFavorites() {
-        database.removeFromFavorite(news: detailedNews)
+        database.removeFromFavorite(story: detailedNews)
     }
     
     func isFavorite() -> Bool {
-        return database.isFavorite(news: detailedNews)
+        return database.isFavorite(story: detailedNews)
     }
     
 

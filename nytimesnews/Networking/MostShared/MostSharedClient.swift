@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MostSharedClient: NSObject, NewsApi {
+class MostSharedClient: NSObject, StoriesApi {
     
     var path: String = "https://api.nytimes.com/svc/mostpopular/v2/shared/\(ApiParams.period).json"
     

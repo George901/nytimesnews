@@ -7,9 +7,9 @@
 
 import UIKit
 
-class FavoritesPresenter: NSObject, NewsPresenter {
+class FavoritesPresenter: NSObject, StoriesPresenter {
   
-    var news: [News] = []
+    var stories: [Story] = []
     var coordinator: NewsListCoordinator!
     weak var view: NewsListView!
     
@@ -20,26 +20,24 @@ class FavoritesPresenter: NSObject, NewsPresenter {
         super.init()
     }
     
-    func getNews() {
-        news = database.fetchFavorites()
+    func getStories() {
+        stories = database.fetchFavorites()
         view.update()
     }
     
-    func addToFavorites(news: News) {
-        return
+    func addToFavorites(story: Story) {}
+    
+    func removeFromFavorites(story: Story) {
+        self.stories.removeAll(where: {$0.id == story.id})
+        database.removeFromFavorite(story: story)
     }
     
-    func removeFromFavorites(news: News) {
-        self.news.removeAll(where: {$0.id == news.id})
-        database.removeFromFavorite(news: news)
-    }
-    
-    func isFavorite(news: News) -> Bool {
+    func isFavorite(story: Story) -> Bool {
         return true
     }
     
-    func showDetailed(news: News) {
-        coordinator.showDetailed(news: news)
+    func showDetailed(story: Story) {
+        coordinator.showDetailed(news: story)
     }
     
     

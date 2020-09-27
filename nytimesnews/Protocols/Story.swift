@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol News: NSObjectProtocol {
+protocol Story: NSObjectProtocol {
     var id: Int { get }
     var title: String { get }
     var abstract: String { get }

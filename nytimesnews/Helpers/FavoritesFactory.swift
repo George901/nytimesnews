@@ -10,7 +10,7 @@ import CoreData
 
 class FavoritesFactory: NSObject {
     
-    static func createFavoriteFrom(news: News, in context: NSManagedObjectContext) {
+    static func createFavoriteFrom(news: Story, in context: NSManagedObjectContext) {
         let favorite: Favorite = Favorite(context: context)
         favorite.newsID = Int64(news.id)
         favorite.newsUrl = news.url

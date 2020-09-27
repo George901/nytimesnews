@@ -7,6 +7,6 @@
 
 import UIKit
 
-class MostEmailedClient: NSObject, NewsApi {
+class MostEmailedClient: NSObject, StoriesApi {
     var path: String = "https://api.nytimes.com/svc/mostpopular/v2/emailed/\(ApiParams.period).json"
 }

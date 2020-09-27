@@ -14,9 +14,9 @@ protocol NewsListView: NSObjectProtocol {
     func update()
 }
 
-class NewsListController: BaseController {
+class StoriesListController: BaseController {
     
-    var presenter: NewsPresenter!
+    var presenter: StoriesPresenter!
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -32,7 +32,7 @@ class NewsListController: BaseController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.getNews()
+        presenter.getStories()
     }
     
     private func registerCells() {
@@ -41,40 +41,40 @@ class NewsListController: BaseController {
     
 }
 
-extension NewsListController: UITableViewDataSource {
+extension StoriesListController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.news.count
+        return presenter.stories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let news = presenter.news[indexPath.row]
+        let news = presenter.stories[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
-        cell.setupWith(news: news, isFavorite: presenter.isFavorite(news: news)) { [weak self] (isAdded) in
-            isAdded ? self?.presenter.addToFavorites(news: news) : self?.presenter.removeFromFavorites(news: news)
+        cell.setupWith(news: news, isFavorite: presenter.isFavorite(story: news)) { [weak self] (isAdded) in
+            isAdded ? self?.presenter.addToFavorites(story: news) : self?.presenter.removeFromFavorites(story: news)
         }
         return cell
     }
     
 }
 
-extension NewsListController: UITableViewDelegate {
+extension StoriesListController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.showDetailed(news: presenter.news[indexPath.row])
+        presenter.showDetailed(story: presenter.stories[indexPath.row])
     }
     
 }
 
-extension NewsListController: NewsListView {
+extension StoriesListController: NewsListView {
     
     func showActivity() {
         showActivityIndicator()

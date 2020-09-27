@@ -12,7 +12,7 @@ class DatabaseClient: NSObject, Database {
     static let shared: DatabaseClient = DatabaseClient()
     
     private var storage: Storage!
-    private var items: [News] = []
+    private var items: [Story] = []
     
     func initializeStorage(_ storage: Storage) {
         self.storage = storage
@@ -24,25 +24,25 @@ class DatabaseClient: NSObject, Database {
         _ = fetchFavorites()
     }
     
-    func fetchFavorites() -> [News] {
+    func fetchFavorites() -> [Story] {
         items = storage.getFavorites()
         return items
     }
-    func addNewsToFavorite(news: News) {
-        items.append(news)
-        storage.createFavoriteFrom(news: news)
+    func addToFavorite(story: Story) {
+        items.append(story)
+        storage.createFavoriteFrom(story: story)
     }
-    func removeFromFavorite(news: News) {
-        items.removeAll(where: {$0.id == news.id})
-        storage.removeFromFavorites(news: news)
+    func removeFromFavorite(story: Story) {
+        items.removeAll(where: {$0.id == story.id})
+        storage.removeFromFavorites(story: story)
     }
     
     func clear() {
         storage.clear()
     }
     
-    func isFavorite(news: News) -> Bool {
-        return items.contains(where: {$0.id == news.id})
+    func isFavorite(story: Story) -> Bool {
+        return items.contains(where: {$0.id == story.id})
     }
 
 }

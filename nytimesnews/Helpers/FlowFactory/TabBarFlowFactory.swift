@@ -39,7 +39,7 @@ class TabBarFlowFactory: NSObject, TabBarFlowProtocol {
         return coordinator
     }
 
-    private func createNewsListFlow(api: NewsApi, parentCoordinator: Coordinator) -> UINavigationController {
+    private func createNewsListFlow(api: StoriesApi, parentCoordinator: Coordinator) -> UINavigationController {
         let presenter: NewsListPresenter = NewsListPresenter(api: api, database: DatabaseClient.shared)
         let navigationVC: UINavigationController = UINavigationController(rootViewController: newsListController(presenter: presenter))
         let coordinator: NewsListCoordinator = listCoordinator(parent: parentCoordinator, navigationController: navigationVC)
@@ -47,8 +47,8 @@ class TabBarFlowFactory: NSObject, TabBarFlowProtocol {
         return navigationVC
     }
     
-    private func newsListController(presenter: NewsListPresenter) -> NewsListController {
-        let controller = NewsListController.instantiateFromStoryboard(named: "NewsList", storyboardIdentifier: "NewsListController")
+    private func newsListController(presenter: NewsListPresenter) -> StoriesListController {
+        let controller = StoriesListController.instantiateFromStoryboard(named: "NewsList", storyboardIdentifier: "NewsListController")
         presenter.view = controller
         controller.presenter = presenter
         return controller

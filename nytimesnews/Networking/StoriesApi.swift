@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol NewsApi: NSObjectProtocol {
+protocol StoriesApi: NSObjectProtocol {
     var path: String { get set }
-    func loadNews(onSuccess: SuccessBlock<[News]>?, onError: ErrorBlock?)
+    func loadNews(onSuccess: SuccessBlock<[Story]>?, onError: ErrorBlock?)
 }
 
-extension NewsApi {
-    func loadNews(onSuccess: SuccessBlock<[News]>?, onError: ErrorBlock?) {
+extension StoriesApi {
+    func loadNews(onSuccess: SuccessBlock<[Story]>?, onError: ErrorBlock?) {
         APIClient.shared
             .request(path,
                      method: .get,

@@ -21,7 +21,7 @@ class NewsListCoordinator: NSObject, Coordinator {
     func startFlow() {
     }
     
-    func showDetailed(news: News) {
+    func showDetailed(news: Story) {
         let controller = NewsDetailedController.instantiateFromStoryboard(named: "NewsList", storyboardIdentifier: "NewsDetailedController")
         let presenter = NewsDetailedPresenter(database: DatabaseClient.shared, news: news)
         controller.presenter = presenter

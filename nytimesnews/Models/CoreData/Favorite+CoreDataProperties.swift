@@ -25,7 +25,7 @@ extension Favorite {
 
 }
 
-extension Favorite: News {
+extension Favorite: Story {
     
     var url: String {
         return newsUrl
