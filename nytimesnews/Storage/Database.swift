@@ -9,8 +9,10 @@ import Foundation
 
 protocol Database: NSObjectProtocol {
     func initializeStorage(_ storage: Storage)
-    func fetchFavorites() -> [Favorite]
+    func loadData()
+    func fetchFavorites() -> [News]
     func addNewsToFavorite(news: News)
-    func remove(favorite: Favorite)
+    func removeFromFavorite(news: News)
     func clear()
+    func isFavorite(news: News) -> Bool
 }

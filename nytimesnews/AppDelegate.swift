@@ -17,13 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
         createCoordinator()
-        appCoordinator.startFlow(with: TabBarController.instantiateFromStoryboard(named: "Tabbar", storyboardIdentifier: "TabBarController"))
+        initDataBase()
         return true
     }
     
     private func createCoordinator() {
-        appCoordinator = AppCoordinator(navigationController: UINavigationController())
+        appCoordinator = AppCoordinator(navigationController:
+                                            UINavigationController(rootViewController:
+                                                                    TabBarController.instantiateFromStoryboard(named: "Tabbar", storyboardIdentifier: "TabBarController")))
         appCoordinator.window = window
+        appCoordinator.createMainFlow()
+    }
+    
+    private func initDataBase() {
+        DatabaseClient.shared.initializeStorage(CoreDataStorage())
     }
 
 

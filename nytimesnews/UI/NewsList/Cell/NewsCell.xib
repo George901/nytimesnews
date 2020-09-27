@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewsCell" id="NU2-Gd-20t" customClass="NewsCell" customModule="nytimesnews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NU2-Gd-20t" id="63C-Oh-jEt">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afh-Ef-O5Z">
+                        <rect key="frame" x="20" y="10" width="374" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="absctract" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkO-dj-mlB">
+                        <rect key="frame" x="20" y="46" width="374" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="by Name Lastname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWm-HH-cuV">
+                        <rect key="frame" x="20" y="95.5" width="374" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="22.02.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrI-ZM-dqR">
+                        <rect key="frame" x="20" y="122.5" width="72" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnC-xC-q5t">
+                        <rect key="frame" x="359" y="104.5" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="ihI-qw-7zt"/>
+                            <constraint firstAttribute="width" constant="35" id="uAz-Sk-HM7"/>
+                        </constraints>
+                        <state key="normal" image="star" catalog="system"/>
+                        <state key="selected" image="star.fill" catalog="system"/>
+                        <connections>
+                            <action selector="favoritesButtonPressed:" destination="NU2-Gd-20t" eventType="touchUpInside" id="HaO-hj-W1M"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NrI-ZM-dqR" firstAttribute="top" secondItem="mWm-HH-cuV" secondAttribute="bottom" constant="10" id="2Hm-sn-1Tj"/>
+                    <constraint firstItem="NrI-ZM-dqR" firstAttribute="leading" secondItem="63C-Oh-jEt" secondAttribute="leading" constant="20" id="75f-tG-MoP"/>
+                    <constraint firstAttribute="trailing" secondItem="OkO-dj-mlB" secondAttribute="trailing" constant="20" id="Bjg-x2-IEC"/>
+                    <constraint firstItem="afh-Ef-O5Z" firstAttribute="leading" secondItem="63C-Oh-jEt" secondAttribute="leading" constant="20" id="C1r-p1-toN"/>
+                    <constraint firstItem="mWm-HH-cuV" firstAttribute="leading" secondItem="63C-Oh-jEt" secondAttribute="leading" constant="20" id="FkK-68-p4A"/>
+                    <constraint firstAttribute="trailing" secondItem="afh-Ef-O5Z" secondAttribute="trailing" constant="20" id="UcR-tY-32w"/>
+                    <constraint firstAttribute="bottom" secondItem="NrI-ZM-dqR" secondAttribute="bottom" constant="10" id="VRh-aW-1FJ"/>
+                    <constraint firstAttribute="trailing" secondItem="mWm-HH-cuV" secondAttribute="trailing" constant="20" id="fVK-EE-bvQ"/>
+                    <constraint firstItem="OkO-dj-mlB" firstAttribute="leading" secondItem="63C-Oh-jEt" secondAttribute="leading" constant="20" id="nl5-Ry-NQj"/>
+                    <constraint firstAttribute="bottom" secondItem="xnC-xC-q5t" secondAttribute="bottom" constant="10" id="o9b-cN-cvd"/>
+                    <constraint firstItem="afh-Ef-O5Z" firstAttribute="top" secondItem="63C-Oh-jEt" secondAttribute="top" constant="10" id="pGq-Uo-RKh"/>
+                    <constraint firstItem="OkO-dj-mlB" firstAttribute="top" secondItem="afh-Ef-O5Z" secondAttribute="bottom" constant="15" id="pkz-oX-r5z"/>
+                    <constraint firstAttribute="trailing" secondItem="xnC-xC-q5t" secondAttribute="trailing" constant="20" id="xbw-pF-rOd"/>
+                    <constraint firstItem="mWm-HH-cuV" firstAttribute="top" secondItem="OkO-dj-mlB" secondAttribute="bottom" constant="30" id="zAb-lB-Sb8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="absctractLabel" destination="OkO-dj-mlB" id="R6p-cW-Spg"/>
+                <outlet property="authorLabel" destination="mWm-HH-cuV" id="Faj-Sp-KV3"/>
+                <outlet property="dateLabel" destination="NrI-ZM-dqR" id="rkw-5b-iKw"/>
+                <outlet property="favoritesButton" destination="xnC-xC-q5t" id="pVz-ZZ-gbJ"/>
+                <outlet property="newsTitleLabel" destination="afh-Ef-O5Z" id="df7-iY-Xzz"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="106"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+    </resources>
+</document>

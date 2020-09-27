@@ -20,11 +20,11 @@ class AppCoordinator: NSObject, Coordinator {
         super.init()
     }
     
-    func startFlow(with initialController: UIViewController) {
-        let controller = initialController as! TabBarController
-        let presenter = TabBarPresenter(coordinator: createMainCoordinator(), view: controller)
-        controller.presenter = presenter
-        navigationController.pushViewController(controller, animated: false)
+    func createMainFlow() {
+        let tabbarVC: TabBarController = navigationController.viewControllers[0] as! TabBarController
+        let coordinator: MainCoordinator = createMainCoordinator()
+        let presenter = TabBarPresenter(coordinator: coordinator, view: tabbarVC)
+        tabbarVC.presenter = presenter
         navigationController.isNavigationBarHidden = true
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

@@ -17,11 +17,11 @@ extension NewsApi {
         APIClient.shared
             .request(path,
                      method: .get,
-                     parameters: ["key" : ApiParams.apiKey],
+                     parameters: ["api-key" : ApiParams.apiKey],
                      headers: nil,
                      onSuccess: { (json) in
                         if let data = json {
-                            JsonParser(json: data).parseArray(mappable: NYTNews.self,
+                            JsonParser(json: data["results"]).parseArray(mappable: NYTNews.self,
                                                               onSuccess: onSuccess,
                                                               onError: onError)
                         } else {

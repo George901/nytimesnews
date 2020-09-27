@@ -11,6 +11,6 @@ protocol Storage: NSObjectProtocol {
     func configure()
     func createFavoriteFrom(news: News)
     func getFavorites() -> [Favorite]
-    func delete(favorite: Favorite)
+    func removeFromFavorites(news: News)
     func clear()
 }

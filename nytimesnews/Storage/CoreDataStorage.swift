@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class CoreDataStorage: NSObject, Storage {
-    
+   
     private var container: NSPersistentContainer!
     private var context: NSManagedObjectContext {
         return container.viewContext
@@ -34,9 +34,12 @@ class CoreDataStorage: NSObject, Storage {
         return (try? context.fetch(fetchRequest)) ?? []
     }
     
-    func delete(favorite: Favorite) {
-        context.delete(favorite)
-        saveChanges()
+    func removeFromFavorites(news: News) {
+        if let favorite = news as? Favorite {
+            remove(favorite: favorite)
+        } else {
+            remove(news: news)
+        }
     }
     
     func clear() {
@@ -55,5 +58,19 @@ class CoreDataStorage: NSObject, Storage {
             }
         }
     }
+    
+    private func remove(favorite: Favorite) {
+        context.delete(favorite)
+        saveChanges()
+    }
 
+    private func remove(news: News) {
+        let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "newsID == %i", news.id)
+        guard let favorite = try? context.fetch(fetchRequest).first else {
+            print("No favorites found matching news: \(news.title)")
+            return
+        }
+        remove(favorite: favorite)
+    }
 }

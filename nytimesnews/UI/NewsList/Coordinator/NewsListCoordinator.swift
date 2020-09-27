@@ -19,7 +19,15 @@ class NewsListCoordinator: NSObject, Coordinator {
     }
     
     func startFlow(with initialController: UIViewController) {
-        
+        guard let vc = initialController as? NewsListController else { return }
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func showDetailed(news: News) {
+        let controller = NewsDetailedController.instantiateFromStoryboard(named: "NewsList", storyboardIdentifier: "NewsDetailedController")
+        let presenter = NewsDetailedPresenter(database: DatabaseClient.shared, news: news)
+        controller.presenter = presenter
+        navigationController.pushViewController(controller, animated: true)
     }
     
 }
