@@ -1,24 +1,24 @@
 PODS:
   - Alamofire (5.2.2)
-  - MBProgressHUD (1.2.0)
   - ObjectMapper (4.2.0)
+  - ProgressHUD (13.4)
 
 DEPENDENCIES:
   - Alamofire
-  - MBProgressHUD
   - ObjectMapper
+  - ProgressHUD
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - MBProgressHUD
     - ObjectMapper
+    - ProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
-  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  ProgressHUD: 137a7fc677487c5581668f4490563124fb35c232
 
-PODFILE CHECKSUM: 97943d9efa0a75895afd468458ff8b2f3402eee5
+PODFILE CHECKSUM: 44fc7f8d34aedd7f642fb3f37edb2f34b8e0fcd1
 
-COCOAPODS: 1.8.0
+COCOAPODS: 1.9.3

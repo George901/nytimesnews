@@ -138,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				40177FD7251C910200769BD5 /* AppDelegate.swift */,
-				40178024251CAA5800769BD5 /* AppCoordinator.swift */,
 				404B89A2251CC3C6008AF0C6 /* Models */,
 				404B8990251CBA4C008AF0C6 /* Storage */,
 				404B898F251CBA42008AF0C6 /* Networking */,
@@ -190,6 +189,7 @@
 		40178006251C9A3600769BD5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				403A250F25208767006EEE6C /* Coordinator */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -253,6 +253,14 @@
 				403A250C252083A9006EEE6C /* BaseController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		403A250F25208767006EEE6C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				40178024251CAA5800769BD5 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		404B8978251CB571008AF0C6 /* NewsList */ = {

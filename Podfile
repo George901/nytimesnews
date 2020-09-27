@@ -4,7 +4,7 @@
 target 'nytimesnews' do
   
   pod 'Alamofire'
-  pod 'MBProgressHUD'
+  pod 'ProgressHUD'
   pod 'ObjectMapper'
 
 end

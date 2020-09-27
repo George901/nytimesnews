@@ -14,7 +14,7 @@ protocol NewsListView: NSObjectProtocol {
     func update()
 }
 
-class NewsListController: UIViewController, Storyboarded {
+class NewsListController: BaseController {
     
     var presenter: NewsPresenter!
     
@@ -77,15 +77,15 @@ extension NewsListController: UITableViewDelegate {
 extension NewsListController: NewsListView {
     
     func showActivity() {
-        
+        showActivityIndicator()
     }
     
     func hideActivity() {
-        
+        hideActivityIndicator()
     }
     
     func show(error: Error) {
-        
+        showAlertWith(error: error)
     }
     
     func update() {
