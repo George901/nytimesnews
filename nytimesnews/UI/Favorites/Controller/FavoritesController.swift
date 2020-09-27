@@ -10,9 +10,9 @@ import UIKit
 class FavoritesController: NewsListController {
     
     @IBOutlet private weak var noDataLabel: UILabel!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupView()
     }
     
@@ -32,6 +32,8 @@ extension FavoritesController {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             presenter.removeFromFavorites(news: presenter.news[indexPath.item])
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            setupView()
         }
     }
     

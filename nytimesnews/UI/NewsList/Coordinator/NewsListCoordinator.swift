@@ -18,9 +18,7 @@ class NewsListCoordinator: NSObject, Coordinator {
         super.init()
     }
     
-    func startFlow(with initialController: UIViewController) {
-        guard let vc = initialController as? NewsListController else { return }
-        navigationController.pushViewController(vc, animated: false)
+    func startFlow() {
     }
     
     func showDetailed(news: News) {

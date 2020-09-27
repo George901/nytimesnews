@@ -66,7 +66,7 @@ class CoreDataStorage: NSObject, Storage {
 
     private func remove(news: News) {
         let fetchRequest: NSFetchRequest<Favorite> = Favorite.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "newsID == %i", news.id)
+        fetchRequest.predicate = NSPredicate(format: "newsID == \(news.id)")
         guard let favorite = try? context.fetch(fetchRequest).first else {
             print("No favorites found matching news: \(news.title)")
             return

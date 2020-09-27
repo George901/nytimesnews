@@ -22,6 +22,7 @@ class FavoritesPresenter: NSObject, NewsPresenter {
     
     func getNews() {
         news = database.fetchFavorites()
+        view.update()
     }
     
     func addToFavorites(news: News) {

@@ -22,17 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func createCoordinator() {
-        appCoordinator = AppCoordinator(navigationController:
-                                            UINavigationController(rootViewController:
-                                                                    TabBarController.instantiateFromStoryboard(named: "Tabbar", storyboardIdentifier: "TabBarController")))
-        appCoordinator.window = window
-        appCoordinator.createMainFlow()
+        appCoordinator = AppCoordinator(window: window, factory: MainFlowFactory())
+        appCoordinator.startFlow()
     }
     
     private func initDataBase() {
         DatabaseClient.shared.initializeStorage(CoreDataStorage())
     }
-
 
 }
 

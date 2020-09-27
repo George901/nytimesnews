@@ -28,16 +28,15 @@ class NewsListController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         presenter.getNews()
     }
     
     private func registerCells() {
         tableView.register(UINib(nibName: "NewsCell", bundle: Bundle.main), forCellReuseIdentifier: "NewsCell")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
     }
     
 }

@@ -21,17 +21,19 @@ class NewsDetailedController: BaseController {
     
     private func setupView() {
         webView.load(URLRequest(url: URL(string: presenter.detailedNews.url)!))
+        title = presenter.detailedNews.title
         setupNavigationBar()
     }
     
     private func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: barButton())
+        let button = barButton()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }
     
     private func barButton() -> UIButton {
         let button: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
-        button.setImage(UIImage(named: "star"), for: .normal)
-        button.setImage(UIImage(named: "star.filled"), for: .selected)
+        button.setImage(UIImage(systemName: "star"), for: .normal)
+        button.setImage(UIImage(systemName: "star.fill"), for: .selected)
         button.isSelected = presenter.isFavorite()
         button.addTarget(self, action: #selector(favoriteButtonPressed(_:)), for: .touchUpInside)
         return button

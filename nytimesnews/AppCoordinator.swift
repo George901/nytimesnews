@@ -11,31 +11,20 @@ class AppCoordinator: NSObject, Coordinator {
     
     var parentCoordinator: Coordinator? = nil
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
     
-    var window: UIWindow?
+    private var window: UIWindow?
+    private let factory: MainFlowProtocol
     
-    required init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init(window: UIWindow?,
+         factory: MainFlowProtocol) {
+        self.window = window
+        self.factory = factory
         super.init()
     }
     
-    func createMainFlow() {
-        let tabbarVC: TabBarController = navigationController.viewControllers[0] as! TabBarController
-        let coordinator: MainCoordinator = createMainCoordinator()
-        let presenter = TabBarPresenter(coordinator: coordinator, view: tabbarVC)
-        tabbarVC.presenter = presenter
-        navigationController.isNavigationBarHidden = true
-        window?.rootViewController = navigationController
+    func startFlow() {
+        window?.rootViewController = factory.createMainFlow(parentCoordinator: self)
         window?.makeKeyAndVisible()
     }
-    
-    private func createMainCoordinator() -> MainCoordinator {
-        let coordinator = MainCoordinator(navigationController: navigationController)
-        coordinator.parentCoordinator = self
-        childCoordinators.append(coordinator)
-        return coordinator
-    }
-    
 
 }

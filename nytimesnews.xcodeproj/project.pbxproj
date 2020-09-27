@@ -16,9 +16,9 @@
 		40178012251CA4A000769BD5 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40178011251CA4A000769BD5 /* TabBarPresenter.swift */; };
 		40178015251CA4BA00769BD5 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40178014251CA4BA00769BD5 /* MainCoordinator.swift */; };
 		4017801D251CA6AA00769BD5 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4017801C251CA6AA00769BD5 /* Storyboarded.swift */; };
-		40178022251CA99C00769BD5 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40178021251CA99C00769BD5 /* BaseController.swift */; };
 		40178025251CAA5800769BD5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40178024251CAA5800769BD5 /* AppCoordinator.swift */; };
-		404B8976251CB259008AF0C6 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B8975251CB259008AF0C6 /* BaseTableViewController.swift */; };
+		403A24FD25207093006EEE6C /* TabBarFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A24FC25207093006EEE6C /* TabBarFlowFactory.swift */; };
+		403A250D252083A9006EEE6C /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403A250C252083A9006EEE6C /* BaseController.swift */; };
 		404B897A251CB5C1008AF0C6 /* NewsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 404B8979251CB5C1008AF0C6 /* NewsList.storyboard */; };
 		404B8983251CB62D008AF0C6 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B8982251CB62D008AF0C6 /* NewsCell.swift */; };
 		404B8986251CB647008AF0C6 /* NewsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B8985251CB647008AF0C6 /* NewsListCoordinator.swift */; };
@@ -49,6 +49,7 @@
 		405CB20A251E2726006D23AB /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405CB209251E2726006D23AB /* NewsCell.xib */; };
 		405CB20D251E27C1006D23AB /* NewsDetailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405CB20C251E27C1006D23AB /* NewsDetailedController.swift */; };
 		405CB210251E284A006D23AB /* NewsDetailedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405CB20F251E284A006D23AB /* NewsDetailedPresenter.swift */; };
+		405CB21325206C38006D23AB /* MainFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405CB21225206C38006D23AB /* MainFlowFactory.swift */; };
 		674BEE5C29053099564BADC2 /* libPods-nytimesnews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B053E291C68B53C77C8B5D2 /* libPods-nytimesnews.a */; };
 /* End PBXBuildFile section */
 
@@ -64,9 +65,9 @@
 		40178011251CA4A000769BD5 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		40178014251CA4BA00769BD5 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		4017801C251CA6AA00769BD5 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
-		40178021251CA99C00769BD5 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		40178024251CAA5800769BD5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		404B8975251CB259008AF0C6 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		403A24FC25207093006EEE6C /* TabBarFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlowFactory.swift; sourceTree = "<group>"; };
+		403A250C252083A9006EEE6C /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		404B8979251CB5C1008AF0C6 /* NewsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsList.storyboard; sourceTree = "<group>"; };
 		404B8982251CB62D008AF0C6 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		404B8985251CB647008AF0C6 /* NewsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListCoordinator.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		405CB209251E2726006D23AB /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		405CB20C251E27C1006D23AB /* NewsDetailedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailedController.swift; sourceTree = "<group>"; };
 		405CB20F251E284A006D23AB /* NewsDetailedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailedPresenter.swift; sourceTree = "<group>"; };
+		405CB21225206C38006D23AB /* MainFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowFactory.swift; sourceTree = "<group>"; };
 		5B053E291C68B53C77C8B5D2 /* libPods-nytimesnews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nytimesnews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		954D9C9258268B9A2B746085 /* Pods-nytimesnews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nytimesnews.release.xcconfig"; path = "Target Support Files/Pods-nytimesnews/Pods-nytimesnews.release.xcconfig"; sourceTree = "<group>"; };
 		CE872407860B0BB53055AC64 /* Pods-nytimesnews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nytimesnews.debug.xcconfig"; path = "Target Support Files/Pods-nytimesnews/Pods-nytimesnews.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		40177FFF251C95B300769BD5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				405CB21525206F2B006D23AB /* FlowFactory */,
 				404B89BB251CC7B3008AF0C6 /* Closures */,
 				404B89B8251CC78D008AF0C6 /* JsonParser.swift */,
 				404B8999251CC1E4008AF0C6 /* FavoritesFactory.swift */,
@@ -194,7 +197,7 @@
 		40178007251C9A3B00769BD5 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				40178020251CA97F00769BD5 /* Controller */,
+				403A250B2520839A006EEE6C /* Controller */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -244,11 +247,10 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
-		40178020251CA97F00769BD5 /* Controller */ = {
+		403A250B2520839A006EEE6C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				40178021251CA99C00769BD5 /* BaseController.swift */,
-				404B8975251CB259008AF0C6 /* BaseTableViewController.swift */,
+				403A250C252083A9006EEE6C /* BaseController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -398,6 +400,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		405CB21525206F2B006D23AB /* FlowFactory */ = {
+			isa = PBXGroup;
+			children = (
+				405CB21225206C38006D23AB /* MainFlowFactory.swift */,
+				403A24FC25207093006EEE6C /* TabBarFlowFactory.swift */,
+			);
+			path = FlowFactory;
+			sourceTree = "<group>";
+		};
 		6A247752BF7A7B9056CD754E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,7 +527,6 @@
 			files = (
 				404B8993251CBA79008AF0C6 /* News.xcdatamodeld in Sources */,
 				404B89B0251CC5CE008AF0C6 /* Favorite+CoreDataProperties.swift in Sources */,
-				404B8976251CB259008AF0C6 /* BaseTableViewController.swift in Sources */,
 				404B89E0251DC251008AF0C6 /* DatabaseClient.swift in Sources */,
 				404B898C251CB7C3008AF0C6 /* NewsListController.swift in Sources */,
 				40178012251CA4A000769BD5 /* TabBarPresenter.swift in Sources */,
@@ -525,10 +535,11 @@
 				404B89B9251CC78D008AF0C6 /* JsonParser.swift in Sources */,
 				4017800F251CA40700769BD5 /* TabBarController.swift in Sources */,
 				404B89C6251CCB41008AF0C6 /* NewsApi.swift in Sources */,
+				405CB21325206C38006D23AB /* MainFlowFactory.swift in Sources */,
 				405CB210251E284A006D23AB /* NewsDetailedPresenter.swift in Sources */,
 				404B89D6251CD49B008AF0C6 /* ApiParams.swift in Sources */,
+				403A250D252083A9006EEE6C /* BaseController.swift in Sources */,
 				404B899D251CC2C9008AF0C6 /* Storage.swift in Sources */,
-				40178022251CA99C00769BD5 /* BaseController.swift in Sources */,
 				404B89AB251CC556008AF0C6 /* NYTNews.swift in Sources */,
 				404B8983251CB62D008AF0C6 /* NewsCell.swift in Sources */,
 				404B8986251CB647008AF0C6 /* NewsListCoordinator.swift in Sources */,
@@ -537,6 +548,7 @@
 				40178025251CAA5800769BD5 /* AppCoordinator.swift in Sources */,
 				405CB20D251E27C1006D23AB /* NewsDetailedController.swift in Sources */,
 				404B8996251CBE61008AF0C6 /* News.swift in Sources */,
+				403A24FD25207093006EEE6C /* TabBarFlowFactory.swift in Sources */,
 				404B89DA251DC22F008AF0C6 /* Database.swift in Sources */,
 				40178015251CA4BA00769BD5 /* MainCoordinator.swift in Sources */,
 				404B89D0251CCC79008AF0C6 /* MostEmailedClient.swift in Sources */,

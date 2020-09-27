@@ -10,8 +10,7 @@ import UIKit
 protocol Coordinator: NSObjectProtocol {
     var parentCoordinator: Coordinator? { get set }
     var childCoordinators: [Coordinator] { get set }
-    var navigationController: UINavigationController { get set }
-    init(navigationController: UINavigationController)
+    func startFlow()
 }
 
 
