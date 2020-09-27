@@ -44,8 +44,7 @@ class CoreDataStorage: NSObject, Storage {
     
     func clear() {
         let batchRequest = NSBatchDeleteRequest(fetchRequest: Favorite.fetchRequest())
-        let result = try? context.execute(batchRequest)
-        print(result)
+        _ = try? context.execute(batchRequest)
         saveChanges()
     }
     

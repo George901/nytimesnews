@@ -21,6 +21,12 @@ class FavoritesController: StoriesListController {
         tableView.isHidden = presenter.stories.isEmpty
     }
     
+    override func handleFavoriteSelection(for story: Story, isAdded: Bool) {
+        presenter.removeFromFavorites(story: story)
+        tableView.reloadData()
+        setupView()
+    }
+    
 }
 
 extension FavoritesController {

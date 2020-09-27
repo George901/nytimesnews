@@ -39,6 +39,10 @@ class StoriesListController: BaseController {
         tableView.register(UINib(nibName: "NewsCell", bundle: Bundle.main), forCellReuseIdentifier: "NewsCell")
     }
     
+    func handleFavoriteSelection(for story: Story, isAdded: Bool) {
+        isAdded ? presenter.addToFavorites(story: story) : presenter.removeFromFavorites(story: story)
+    }
+    
 }
 
 extension StoriesListController: UITableViewDataSource {
@@ -52,10 +56,10 @@ extension StoriesListController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let news = presenter.stories[indexPath.row]
+        let story = presenter.stories[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
-        cell.setupWith(news: news, isFavorite: presenter.isFavorite(story: news)) { [weak self] (isAdded) in
-            isAdded ? self?.presenter.addToFavorites(story: news) : self?.presenter.removeFromFavorites(story: news)
+        cell.setupWith(news: story, isFavorite: presenter.isFavorite(story: story)) { [weak self] (isAdded) in
+            self?.handleFavoriteSelection(for: story, isAdded: isAdded)
         }
         return cell
     }
