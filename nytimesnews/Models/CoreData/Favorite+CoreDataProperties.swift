@@ -44,7 +44,7 @@ extension Favorite: Story {
     }
     
     var publishedAt: String {
-        return ""
+        return DateHelper.shared.dateFormatterDay.string(from: newsPublishedAt)
     }
     
     var author: String {
